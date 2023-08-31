@@ -18,7 +18,7 @@
    - name: save output to /etc/ansible/backups
      copy:
        content: "{{ current_version.properties.CommonW6432Dir.type }}"
-       dest: "./config_{{ inventory_hostname }}.txt"
+       dest: "/home/dago/config_{{ inventory_hostname }}.txt"
 
 
    - name: Printing Something
