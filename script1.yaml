@@ -6,29 +6,25 @@
    tasks:
    - name: test connection
      win_ping:
-     when: ACTION == "Test"
 
    - name: Obtain information about a registry key using short form
      win_reg_stat:
        path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
      register: current_version
-     when: ACTION == "Test"
 
 
    - name: save output to /etc/ansible/backups
      copy:
        content: "{{ current_version.properties.CommonW6432Dir.type }}"
-       dest: "/home/dago/ansible/config_{{ inventory_hostname }}.txt"
+       dest: "./config_{{ inventory_hostname }}.txt"
 
 
    - name: Printing Something
      debug:
        msg: "{{ current_version.properties.CommonW6432Dir.type }}"
-     when: ACTION == "Test"
 
 
    - name: What is my inventory name
      debug:
        msg: 'Hola mundo: {{ testDagoVar }}'
-     when: ACTION == "Print"
 #     debug: var={{ inventory_hostname }}   
