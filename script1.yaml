@@ -20,7 +20,7 @@
 
 
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
-   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/dago/ansible/backupdictory/config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/storagedir/config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
