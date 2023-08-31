@@ -13,10 +13,13 @@
      register: current_version
 
 
-   - name: save output to /etc/ansible/backups
-     copy:
-       content: "{{ current_version.properties.CommonW6432Dir.type }}"
-       dest: "./config_{{ inventory_hostname }}.txt"
+#   - name: save output to /etc/ansible/backups
+#     copy:
+#       content: "{{ current_version.properties.CommonW6432Dir.type }}"
+#       dest: "/home/dago/ansible/backupdictory/config_{{ inventory_hostname }}.txt"
+
+
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/home/dago/ansible/backupdictory/config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
