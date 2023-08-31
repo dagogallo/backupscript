@@ -19,7 +19,7 @@
 #       dest: "/home/dago/ansible/backupdictory/config_{{ inventory_hostname }}.txt"
 
 
-   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/home/dago/ansible/backupdictory/config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
