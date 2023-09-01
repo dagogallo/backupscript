@@ -25,7 +25,7 @@
 #     shell: somescript.sh >> somelog.txt
    - name: Change the working directory to somedir/ before executing the command.
      fetch:
-       src: $HOME/projects/storagedir/config_windows01.txt
+       src: '$HOME/projects/storagedir/config_windows01.txt'
        dest: /var/lib/awx/projects/storagedir/
        flat: yes
 
