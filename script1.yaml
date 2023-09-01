@@ -20,13 +20,14 @@
 
 
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
-#   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 
 #     shell: somescript.sh >> somelog.txt
    - name: Change the working directory to somedir/ before executing the command.
-     shell: |
-       cd /var/lib/awx/projects/storagedir
-       cp * /home/dago/ansible/backupdictory/
+     fetch:
+       src: './*'
+       dest: /var/lib/awx/projects/storagedir/
+       flat: yes
 
 
 
