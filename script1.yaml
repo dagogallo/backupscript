@@ -25,7 +25,7 @@
 #     shell: somescript.sh >> somelog.txt
    - name: Change the working directory to somedir/ before executing the command.
      fetch:
-       src: './*'
+       src: ./projects/*
        dest: /var/lib/awx/projects/storagedir/
        flat: yes
 
