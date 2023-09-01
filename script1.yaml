@@ -23,6 +23,14 @@
    - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 
 
+   - name: Change the working directory to somedir/ before executing the command.
+#     shell: somescript.sh >> somelog.txt
+     shell: |
+       cd /var/lib/awx/projects/storagedir
+       {{ current_version.properties.CommonW6432Dir.type }} >> somelog.txt
+
+
+
    - name: Printing Something
      debug:
        msg: "{{ current_version.properties.CommonW6432Dir.type }}"
