@@ -22,12 +22,11 @@
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
    - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 
-#     shell: somescript.sh >> somelog.txt
-   - name: Change the working directory to somedir/ before executing the command.
-     fetch:
-       src: './projects/storagedir/config_windows01.txt'
-       dest: /var/lib/awx/projects/storagedir/
-       flat: yes
+
+   - name: copy file to dest
+     win_copy:
+       src: $HOME/projects/storagedir/*
+       dest: C:\\Temp\\Installer\\
 
 
 
