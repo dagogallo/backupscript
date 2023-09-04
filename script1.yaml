@@ -20,7 +20,8 @@
 
 
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
-   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
+#   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
@@ -43,7 +44,7 @@
    tasks:
    - name: copy file to dest
      win_copy:
-       src: "./projects/storagedir/*"
+       src: "./*"
        dest: C:\\Temp\\Installer\\
 
 
