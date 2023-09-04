@@ -7,7 +7,7 @@
    tasks:
    - name: Clean up
      shell: |
-       rm /home/dago/ansible/SublimeSetup.exe
+       rm /home/dago/ansible/*.exe
 
  - name: Test all hosts
    hosts: windows
