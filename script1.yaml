@@ -16,7 +16,7 @@
 
    - name: Creates directory
      file:
-       path: ./storagedir1
+       path: /storagedir1
        state: directory
        owner: awx
        group: awx
