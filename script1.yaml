@@ -10,9 +10,9 @@
        ls /home/dago/ansible/
 
 
-   - name: Create a directory
-     shell: |
-       mkdir ./storagedir1
+#   - name: Create a directory
+#     shell: |
+#       mkdir ./storagedir1
 
  - name: Test all hosts
    hosts: windows
@@ -22,6 +22,11 @@
    tasks:
    - name: test connection
      win_ping:
+
+
+   - name: Create a directory
+     shell: |
+       mkdir ./storagedir1
 
    - name: Obtain information about a registry key using short form
      win_reg_stat:
