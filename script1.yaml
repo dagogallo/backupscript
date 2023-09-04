@@ -18,6 +18,9 @@
      file:
        path: ./storagedir1
        state: directory
+       owner: awx
+       group: awx
+       mode: 0775
 
 #   - name: save output to /etc/ansible/backups
 #     copy:
