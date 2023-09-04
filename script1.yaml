@@ -44,7 +44,7 @@
    tasks:
    - name: copy file to dest
      win_copy:
-       src: ./config_windows01.txt
+       src: ./*.txt
        dest: C:\\Temp\\Installer\\
 
 
