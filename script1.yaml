@@ -3,10 +3,16 @@
    connection: local
 
    tasks:
-   - name: Create a directory if it does not exist
+   - name: Create a directory
      file:
        path: ./storagedir1
        state: directory
+
+   - name: Create a directory if it does not exist
+     file:
+       path: ./storagedir1/routers
+       state: directory
+
 
 
  - name: Test all hosts
@@ -33,6 +39,7 @@
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
    - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./storagedir1/config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./storagedir1/routers/config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
