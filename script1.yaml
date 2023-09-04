@@ -14,13 +14,15 @@
 
 
 
-   - name: Create a directory if it does not exist
-     ansible.builtin.file:
-       path: $HOME/storagedir1
-       state: directory
-       mode: '0755'
-       owner: awx
-       group: root
+   # - name: Create a directory if it does not exist
+   #   ansible.builtin.file:
+   #     path: $HOME/storagedir1
+   #     state: directory
+   #     mode: '0755'
+   #     owner: awx
+   #     group: root
+
+    - local_action: file path="$HOME/storagedir1" state="directory" mode="0755"
 
 #   - name: save output to /etc/ansible/backups
 #     copy:
