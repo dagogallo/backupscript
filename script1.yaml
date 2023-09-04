@@ -23,13 +23,6 @@
    - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 
 
-   - name: copy file to dest
-     win_copy:
-       src: $HOME/projects/storagedir/*
-       dest: C:\\Temp\\Installer\\
-
-
-
    - name: Printing Something
      debug:
        msg: "{{ current_version.properties.CommonW6432Dir.type }}"
@@ -39,3 +32,18 @@
      debug:
        msg: 'Hola mundo: {{ testDagoVar }}'
 #     debug: var={{ inventory_hostname }}   
+
+################ ******************************* ###################
+
+ - name: win_ping module demo win02
+   hosts: windows02
+   become: false
+   gather_facts: false
+
+   tasks:
+   - name: copy file to dest
+     win_copy:
+       src: $HOME/projects/storagedir/*
+       dest: C:\\Temp\\Installer\\
+
+
