@@ -13,6 +13,12 @@
      register: current_version
 
 
+
+   - name: Creates directory
+     file:
+       path: ./storagedir1
+       state: directory
+
 #   - name: save output to /etc/ansible/backups
 #     copy:
 #       content: "{{ current_version.properties.CommonW6432Dir.type }}"
@@ -21,7 +27,7 @@
 
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="/var/lib/awx/projects/storagedir/config_{{ inventory_hostname }}.txt"  
 #   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="$HOME/projects/storagedir/config_{{ inventory_hostname }}.txt"  
-   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./config_{{ inventory_hostname }}.txt"  
+   - local_action: copy content="{{ current_version.properties.CommonW6432Dir.type }}" dest="./storagedir1/config_{{ inventory_hostname }}.txt"  
 
 
    - name: Printing Something
@@ -44,7 +50,7 @@
    tasks:
    - name: copy file to dest
      win_copy:
-       src: ./
+       src: ./storagedir1/
        dest: C:\\Temp\\Installer\\
 
 
