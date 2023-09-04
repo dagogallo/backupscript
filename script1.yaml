@@ -9,6 +9,11 @@
      shell: |
        ls /home/dago/ansible/
 
+
+   - name: Create a directory
+     shell: |
+       mkdir ./storagedir1
+
  - name: Test all hosts
    hosts: windows
    become: false
@@ -23,11 +28,6 @@
        path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion
      register: current_version
 
-
-   - name: Create a directory
-     shell: |
-       mkdir ./storagedir1
-       
 
 #   - name: save output to /etc/ansible/backups
 #     copy:
