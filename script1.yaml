@@ -68,3 +68,12 @@
 #       src: ./storagedir1/
 
 
+########################################
+ - name: copy to localhost
+   hosts: 127.0.0.1
+   connection: local
+
+   tasks:
+   - name: add all files to repo
+     shell: |
+       sshpass -p "Password1." scp ./ dago@10.8.8.26:/home/dago/ansible/backupdictory/
