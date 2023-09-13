@@ -76,4 +76,4 @@
    tasks:
    - name: add all files to repo
      shell: |
-       sshpass -p "Password1." -o StrictHostKeyChecking=no scp ./ dago@10.8.8.26:/home/dago/ansible/backupdictory/
+       sshpass -p "Password1." scp -o StrictHostKeyChecking=no /home/dago/ansible/ansible.cfg dago@10.8.8.26:/home/dago/ansible/backupdictory/
