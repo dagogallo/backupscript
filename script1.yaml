@@ -1,3 +1,4 @@
+ ---
  - name: win_ping module demo w01
    hosts: 127.0.0.1
    connection: local
@@ -76,4 +77,10 @@
    tasks:
    - name: add all files to repo
      shell: |
-       sshpass -p "Password1." scp -o StrictHostKeyChecking=no ./ dago@10.8.8.26:/home/dago/ansible/backupdictory/
+       pwd
+       ls
+     register: shell_output
+
+   - name: print1
+     debug:
+       msg: 'Hola mundo: {{ shell_output }}'
