@@ -8,11 +8,13 @@
      file:
        path: ./storagedir1
        state: directory
+       mode: '0755'
 
    - name: Create a directory if it does not exist
      file:
        path: ./storagedir1/routers
        state: directory
+       mode: '0755'
 
 
 
@@ -77,8 +79,9 @@
    tasks:
    - name: add all files to repo
      shell: |
-       pwd
+       cat > filename.txt
        ls
+       scp  ./ dago@127.0.0.1:/home/dago/ansible/backupdictory/
      register: shell_output
 
    - name: print1
