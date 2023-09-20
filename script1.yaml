@@ -81,7 +81,6 @@
      shell: |
        cat > filename.txt
        ls
-       sshpass -p "1234QWer" scp -o StrictHostKeyChecking=no ./ dago@10.8.8.21:/home/dago/ansible/storedir1/
      register: shell_output
 
    - name: print1
