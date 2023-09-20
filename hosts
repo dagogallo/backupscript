@@ -1,5 +1,5 @@
 [windows]
-windows01 ansible_host=10.8.8.27 testDagoVar=1989 Printer=5 IP1=10.122.147.66 IP2=10.122.147.122 IP3=3.3.3.3 IP4=4.4.4.4 IP5=5.5.5.5
+windows01 ansible_host=10.8.8.23 testDagoVar=1989 Printer=5 IP1=10.122.147.66 IP2=10.122.147.122 IP3=3.3.3.3 IP4=4.4.4.4 IP5=5.5.5.5
 windows02 ansible_host=10.8.8.24 testDagoVar=28 Printer=2 IP1=10.122.147.66 IP2=10.122.147.122 IP3=0 IP4=0 IP5=0
 
 [windows:vars]
